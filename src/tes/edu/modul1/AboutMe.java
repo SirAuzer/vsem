@@ -36,3 +36,18 @@ public class AboutMe {
         System.out.println("This is the first example in practice - " + isFirstTask + ".");
     }
 }
+
+
+/*
+        Hello..
+        my age is 21 years.
+        My height 178.5-cms.
+        My weight 75.35-kg.
+        Super Hero have symbol - <<S>>.
+        I sleep 3-hours a day.
+        I live in a city with a population of 1017699.
+        Better to listen to music every 24 hours in a row.
+        This is the first example in practice - true.
+
+
+*/
