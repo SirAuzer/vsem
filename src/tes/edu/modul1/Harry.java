@@ -26,18 +26,15 @@ public class Harry {
         {
             if (!stringOfDistictinct.contains(words[i]))
             {
-                stringOfDistictinct += words[i] + " ";
+                if (words[i].startsWith("'"))
+                {
+                    stringOfDistictinct += words[i].substring(1) + " ";
+                }
+                else stringOfDistictinct += words[i] + " ";
             }
         }
         String[] distincts = stringOfDistictinct.split(" ");
 
-        for (int i = 0; i < distincts.length; i++)
-        {
-            if (distincts[i].startsWith("'"))
-            {
-                distincts[i] = distincts[i].substring(1);
-            }
-        }
 
         Arrays.sort(distincts); ////Order the words in alphabetic order
         for (int i = 0; i < 100; i++)
