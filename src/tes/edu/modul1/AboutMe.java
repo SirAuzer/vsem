@@ -12,27 +12,27 @@ public class AboutMe {
     public static void main(String[] args) {
         System.out.println("Hello..");
         byte myAge = 21;
-        System.out.println(myAge);
+        System.out.println("my age is " + myAge + " years.");
 
         double myHeight = 178.5;
-        System.out.println(myHeight);
+        System.out.println("My height " + myHeight + "-cms.");
 
-        float myWight = 75.35f;
-        System.out.println(myWight);
+        float myWeight = 75.35f;
+        System.out.println("My weight " + myWeight + "-kg.");
 
-        char myGender = 'M';
-        System.out.println(myGender);
+        char symbol = 'S';
+        System.out.println("Super Hero have symbol - <<" + symbol + ">>.");
 
         short sleepTime = 3;
-        System.out.println(sleepTime);
+        System.out.println("I sleep " + sleepTime + "-hours a day.");
 
-        long timeAgo = 7_000_000_000L;
-        System.out.println(timeAgo);
+        long population = 1_017_699L;
+        System.out.println("I live in a city with a population of "+ population + ".");
 
         int musicTime = 24;
-        System.out.println(musicTime);
+        System.out.println("Better to listen to music every " + musicTime + " hours in a row.");
 
-        boolean check = true;
-        System.out.println(check);
+        boolean isFirstTask = true;
+        System.out.println("This is the first example in practice - " + isFirstTask + ".");
     }
 }
