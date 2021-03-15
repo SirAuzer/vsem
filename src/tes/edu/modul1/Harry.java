@@ -19,7 +19,11 @@ public class Harry {
         String text = new String(Files.readAllBytes(Paths.get("C:\\Users\\Hades\\Desktop\\harry.txt")));
         text = text.replaceAll("[^A-Za-z ']", "");/// Clean the words from a punctuation signs
 
-        String[] words = text.split(" +");// Split into an array of words
+        String[] words = text.split(" \\n");// Split into an array of words
+        for (int i = 0; i < 2; i++) {
+            System.out.println(words[i]);
+            System.out.println(":-------");
+        }
 
         String stringOfDistictinct ="";
         for (int i = 0; i < words.length; i++)
