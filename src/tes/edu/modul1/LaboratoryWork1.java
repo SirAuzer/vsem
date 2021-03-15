@@ -50,6 +50,7 @@ public class LaboratoryWork1 {
             arrayHashCode[i] = distincts[i].hashCode();
         }
 
+
         Arrays.sort(arrayHashCode);
         int intersectionsOfHashes = 0;
         for (int i = 0; i < arrayHashCode.length - 2; i++) {
