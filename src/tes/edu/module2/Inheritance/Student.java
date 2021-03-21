@@ -1,5 +1,7 @@
 package tes.edu.module2.Inheritance;
 
+import tes.edu.module2.design.Person;
+
 import java.time.LocalDate;
 
 /**
@@ -10,7 +12,7 @@ import java.time.LocalDate;
  * @since 21.03.2021 - 17.01
  **/
 
-public class Student {
+public class Student extends Person {
     private int group;
     private int course;
     private int studentID;
@@ -34,6 +36,29 @@ public class Student {
     public Student(int group, int course, int studentID, int credit, int rankingPosition, int contributions,
                    double averageScore, String chair, String department, String university,
                    boolean isExpelled, boolean isFullTimeModeOfStudy, boolean isBursary, boolean isBudget, LocalDate enrollmentDate) {
+        this.group = group;
+        this.course = course;
+        this.studentID = studentID;
+        this.credit = credit;
+        this.rankingPosition = rankingPosition;
+        this.contributions = contributions;
+        this.averageScore = averageScore;
+        this.chair = chair;
+        this.department = department;
+        this.university = university;
+        this.isExpelled = isExpelled;
+        this.isFullTimeModeOfStudy = isFullTimeModeOfStudy;
+        this.isBursary = isBursary;
+        this.isBudget = isBudget;
+        this.enrollmentDate = enrollmentDate;
+    }
+
+    public Student(String firstName, String lastName, String patronymicName, String address, String bloodGroup,
+                   LocalDate dateOfBirth, int age, int passportSeries, double height, double weight,
+                   int group, int course, int studentID, int credit, int rankingPosition, int contributions,
+                   double averageScore, String chair, String department, String university,
+                   boolean isExpelled, boolean isFullTimeModeOfStudy, boolean isBursary, boolean isBudget, LocalDate enrollmentDate) {
+        super(firstName, lastName, patronymicName, address, bloodGroup, dateOfBirth, age, passportSeries, height, weight);
         this.group = group;
         this.course = course;
         this.studentID = studentID;
