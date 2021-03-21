@@ -19,11 +19,8 @@ public class Harry {
         String text = new String(Files.readAllBytes(Paths.get("C:\\Users\\Hades\\Desktop\\harry.txt")));
         text = text.replaceAll("[^A-Za-z ']", "");/// Clean the words from a punctuation signs
 
-        String[] words = text.split(" \\n");// Split into an array of words
-        for (int i = 0; i < 2; i++) {
-            System.out.println(words[i]);
-            System.out.println(":-------");
-        }
+        String[] words = text.split(" +");// Split into an array of words
+        System.out.println(words.length);
 
         String stringOfDistictinct ="";
         for (int i = 0; i < words.length; i++)
@@ -38,6 +35,7 @@ public class Harry {
             }
         }
         String[] distincts = stringOfDistictinct.split(" ");
+        System.out.println(distincts.length);
 
 
         Arrays.sort(distincts); ////Order the words in alphabetic order
