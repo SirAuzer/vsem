@@ -35,7 +35,8 @@ public class Student extends Person {
 
     public Student(int group, int course, int studentID, int credit, int rankingPosition, int contributions,
                    double averageScore, String chair, String department, String university,
-                   boolean isExpelled, boolean isFullTimeModeOfStudy, boolean isBursary, boolean isBudget, LocalDate enrollmentDate) {
+                   boolean isExpelled, boolean isFullTimeModeOfStudy, boolean isBursary, boolean isBudget,
+                   LocalDate enrollmentDate) {
         this.group = group;
         this.course = course;
         this.studentID = studentID;
@@ -53,12 +54,12 @@ public class Student extends Person {
         this.enrollmentDate = enrollmentDate;
     }
 
-    public Student(String firstName, String lastName, String patronymicName, String address, String bloodGroup,
-                   LocalDate dateOfBirth, int age, int passportSeries, double height, double weight,
-                   int group, int course, int studentID, int credit, int rankingPosition, int contributions,
-                   double averageScore, String chair, String department, String university,
+    public Student(String firstName, String lastName, String patronymicName, String address, String bloodGroup, String placeOfBirth,
+                   LocalDate dateOfBirth, int passportSeries, double height, double weight, int group, int course,
+                   int studentID, int credit, int rankingPosition, int contributions, double averageScore,
+                   String chair, String department, String university,
                    boolean isExpelled, boolean isFullTimeModeOfStudy, boolean isBursary, boolean isBudget, LocalDate enrollmentDate) {
-        super(firstName, lastName, patronymicName, address, bloodGroup, dateOfBirth, age, passportSeries, height, weight);
+        super(firstName, lastName, patronymicName, address, bloodGroup, placeOfBirth, dateOfBirth, passportSeries, height, weight);
         this.group = group;
         this.course = course;
         this.studentID = studentID;

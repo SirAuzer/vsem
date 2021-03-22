@@ -16,8 +16,8 @@ public class Person {
     private String patronymicName;
     private String address;
     private String bloodGroup;
+    private String placeOfBirth;
     private LocalDate dateOfBirth;
-    private int age;
     private int passportSeries;
     private double height;
     private double weight;
@@ -25,14 +25,15 @@ public class Person {
     public Person() {
     }
 
-    public Person(String firstName, String lastName, String patronymicName, String address, String bloodGroup, LocalDate dateOfBirth, int age, int passportSeries, double height, double weight) {
+    public Person(String firstName, String lastName, String patronymicName, String address, String bloodGroup, String placeOfBirth,
+                  LocalDate dateOfBirth, int passportSeries, double height, double weight) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.patronymicName = patronymicName;
         this.address = address;
         this.bloodGroup = bloodGroup;
+        this.placeOfBirth = placeOfBirth;
         this.dateOfBirth = dateOfBirth;
-        this.age = age;
         this.passportSeries = passportSeries;
         this.height = height;
         this.weight = weight;
@@ -78,20 +79,20 @@ public class Person {
         this.bloodGroup = bloodGroup;
     }
 
+    public String getPlaceOfBirth() {
+        return placeOfBirth;
+    }
+
+    public void setPlaceOfBirth(String placeOfBirth) {
+        this.placeOfBirth = placeOfBirth;
+    }
+
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public int getPassportSeries() {
@@ -126,8 +127,8 @@ public class Person {
                 ", patronymicName = '" + patronymicName + '\'' +
                 ", address = '" + address + '\'' +
                 ", bloodGroup = '" + bloodGroup + '\'' +
+                ", placeOfBirth = '" + placeOfBirth + '\'' +
                 ", dateOfBirth = " + dateOfBirth +
-                ", age = " + age +
                 ", passportSeries = " + passportSeries +
                 ", height = " + height +
                 ", weight = " + weight +
