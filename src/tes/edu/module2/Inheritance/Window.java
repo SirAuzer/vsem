@@ -66,6 +66,18 @@ public class Window extends Rectangle {
         isBroken = broken;
     }
 
+    public double getPrice(){
+        double price = super.getLength() * super.getWeight();
+        if(isToning) {
+            price *= 4;
+            if (isBroken) {
+                return price / 2;
+            }
+            return price;
+        }
+        return price;
+    }
+
     @Override
     public String toString() {
         return "Window { " +
