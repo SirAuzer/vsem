@@ -75,6 +75,7 @@ public class Window extends Rectangle {
             }
             return price;
         }
+        if(isBroken){return price / 2;}
         return price;
     }
 
