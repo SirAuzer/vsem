@@ -223,4 +223,47 @@ public class Student extends Person {
         System.out.println("\t + " + this.toString());
     }
 
+    public static  class Builder{
+        private Student studentToBuild;
+
+        public Builder() {
+            this.studentToBuild = new Student();
+        }
+
+        public Builder setSimilarTo(Student student){
+            /*super(student.getFirstName(),student.getLastName(), student.getPatronymicName(),
+                    student.getAddress(), student.getBloodGroup(), student.getPatronymicName(),
+                    student.getDateOfBirth(), student.getPatronymicName(), student.getHeight(), student.getWeight());
+           */
+            this.studentToBuild.group = student.group;
+            this.studentToBuild.course = student.course;
+            this.studentToBuild.studentID = student.studentID;
+            this.studentToBuild.credit = student.credit;
+            this.studentToBuild.rankingPosition = student.rankingPosition;
+            this.studentToBuild.contributions = student.contributions;
+            this.studentToBuild.averageScore = student.averageScore;
+            this.studentToBuild.chair = student.chair;
+            this.studentToBuild.department = student.department;
+            this.studentToBuild.university = student.university;
+            this.studentToBuild.isExpelled = student.isExpelled;
+            this.studentToBuild.isFullTimeModeOfStudy = student.isFullTimeModeOfStudy;
+            this.studentToBuild.isBursary = student.isBursary;
+            this.studentToBuild.isBudget = student.isBudget;
+            this.studentToBuild.enrollmentDate = student.enrollmentDate;
+            return this;
+        }
+
+
+
+        public Builder setFirstName(String firstName){
+            studentToBuild.setFirstName(firstName);
+            return this;
+        }
+
+        public Builder setLastName(String lastName){
+            studentToBuild.setFirstName(lastName);
+            return this;
+        }
+    }
+
 }
