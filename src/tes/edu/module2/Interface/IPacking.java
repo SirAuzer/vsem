@@ -1,7 +1,7 @@
 package tes.edu.module2.Interface;
 
 /**
- * @author Hades
+ * @author Arsenii
  * @version 1.0.0
  * @project vsem
  * @class IPacking
