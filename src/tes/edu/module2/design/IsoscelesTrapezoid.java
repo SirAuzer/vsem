@@ -1,5 +1,8 @@
 package tes.edu.module2.design;
 
+import tes.edu.module2.Interface.IGeometry;
+import tes.edu.module2.Interface.IPacking;
+
 import java.util.Objects;
 
 /**
@@ -10,7 +13,7 @@ import java.util.Objects;
  * @since 21.03.2021 - 15.55
  **/
 
-public class IsoscelesTrapezoid {
+public class IsoscelesTrapezoid implements IGeometry, IPacking {
     double lowerBase; //
     double upperBase; //
     double legs;
@@ -54,14 +57,6 @@ public class IsoscelesTrapezoid {
         return Math.sqrt(Math.pow(legs, 2) - (Math.pow((lowerBase - upperBase), 2) / 4));
     }
 
-    public double getArea() {
-        return (((lowerBase + upperBase) / 2) * getHeight());
-    }
-
-    public double getPerimeter() {
-        return lowerBase + upperBase + legs * 2;
-    }
-
     public double getDiagonal() {
         return Math.sqrt(Math.pow(legs, 2) + lowerBase * upperBase);
     }
@@ -94,5 +89,43 @@ public class IsoscelesTrapezoid {
     @Override
     public int hashCode() {
         return Objects.hash(lowerBase, upperBase, legs);
+    }
+
+    @Override
+    public double getPerimeter() {
+        return lowerBase + upperBase + legs * 2;
+    }
+
+    @Override
+    public double getArea() {
+        return (((lowerBase + upperBase) / 2) * getHeight());
+    }
+
+    @Override
+    public void showHeight() {
+        System.out.println(getHeight());
+    }
+
+    @Override
+    public String toJSON() {
+        String json = "Rectangle { \"LowerBase\" : " + this.getLowerBase() +
+                ", \"UpperBase\" : " + this.getUpperBase() +
+                ", \"Legs\" : " + this.getLegs() +" }";
+        return json;
+    }
+
+    @Override
+    public String toXML() {
+        String xml = "<IsoscelesTrapezoid>\n" +
+                "\t<LowerBase>\n\t\t" + this.lowerBase + "\n</LowerBase>\n" +
+                "\t<UpperBase>\n\t\t" + this.getUpperBase() + "\n</UpperBase>\n" +
+                "\t<Legs>\n\t\t" + this.getLegs() + "\n</Legs>\n" +
+                "</IsoscelesTrapezoid>\n";
+        return xml;
+    }
+
+    @Override
+    public String WhatIsThis() {
+        return "Isosceles Trapezoid";
     }
 }
