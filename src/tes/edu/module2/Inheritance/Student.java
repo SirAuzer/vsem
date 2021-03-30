@@ -3,6 +3,7 @@ package tes.edu.module2.Inheritance;
 import tes.edu.module2.design.Person;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 /**
  * @author Arsenii
@@ -17,7 +18,7 @@ public class Student extends Person {
     private int course;
     private int studentID;
     private int credit;       //Number of lessons to be taken
-    private int rankingPosition;
+    private int phone;
     private int contributions; //in scientific journals, collections, etc.
     private double averageScore;
     private String chair;
@@ -33,7 +34,7 @@ public class Student extends Person {
     public Student() {
     }
 
-    public Student(int group, int course, int studentID, int credit, int rankingPosition, int contributions,
+    public Student(int group, int course, int studentID, int credit, int phone, int contributions,
                    double averageScore, String chair, String department, String university,
                    boolean isExpelled, boolean isFullTimeModeOfStudy, boolean isBursary, boolean isBudget,
                    LocalDate enrollmentDate) {
@@ -41,7 +42,7 @@ public class Student extends Person {
         this.course = course;
         this.studentID = studentID;
         this.credit = credit;
-        this.rankingPosition = rankingPosition;
+        this.phone = phone;
         this.contributions = contributions;
         this.averageScore = averageScore;
         this.chair = chair;
@@ -56,7 +57,7 @@ public class Student extends Person {
 
     public Student(String firstName, String lastName, String patronymicName, String address, String bloodGroup, String placeOfBirth,
                    LocalDate dateOfBirth, int passportSeries, double height, double weight, int group, int course,
-                   int studentID, int credit, int rankingPosition, int contributions, double averageScore,
+                   int studentID, int credit, int phone, int contributions, double averageScore,
                    String chair, String department, String university,
                    boolean isExpelled, boolean isFullTimeModeOfStudy, boolean isBursary, boolean isBudget, LocalDate enrollmentDate) {
         super(firstName, lastName, patronymicName, address, bloodGroup, placeOfBirth, dateOfBirth, passportSeries, height, weight);
@@ -64,7 +65,7 @@ public class Student extends Person {
         this.course = course;
         this.studentID = studentID;
         this.credit = credit;
-        this.rankingPosition = rankingPosition;
+        this.phone = phone;
         this.contributions = contributions;
         this.averageScore = averageScore;
         this.chair = chair;
@@ -109,12 +110,12 @@ public class Student extends Person {
         this.credit = credit;
     }
 
-    public int getRankingPosition() {
-        return rankingPosition;
+    public int getPhone() {
+        return phone;
     }
 
-    public void setRankingPosition(int rankingPosition) {
-        this.rankingPosition = rankingPosition;
+    public void setPhone(int phone) {
+        this.phone = phone;
     }
 
     public int getContributions() {
@@ -197,6 +198,24 @@ public class Student extends Person {
         this.enrollmentDate = enrollmentDate;
     }
 
+    public int getRankingPosition(){
+        Random random = new Random();
+        int high = random.nextInt(31);
+        int low = random.nextInt(46);
+        int position;
+        if (getAverageScore() > high){
+            position = 1;
+        }
+        else if(getAverageScore() < high + 70 && getAverageScore() > low){
+            position = 2;
+        }
+        else {
+            position = 3;
+        }
+
+        return position;
+    }
+
     @Override
     public String toString() {
         return "Student { " +
@@ -204,7 +223,7 @@ public class Student extends Person {
                 ", course = " + course +
                 ", studentID = " + studentID +
                 ", credit = " + credit +
-                ", rankingPosition = " + rankingPosition +
+                ", rankingPosition = " + phone +
                 ", contributions = " + contributions +
                 ", averageScore = " + averageScore +
                 ", chair = '" + chair + '\'' +
@@ -231,15 +250,24 @@ public class Student extends Person {
         }
 
         public Builder setSimilarTo(Student student){
-            /*super(student.getFirstName(),student.getLastName(), student.getPatronymicName(),
-                    student.getAddress(), student.getBloodGroup(), student.getPatronymicName(),
-                    student.getDateOfBirth(), student.getPatronymicName(), student.getHeight(), student.getWeight());
-           */
+
+            ///SUPER
+            this.studentToBuild.setFirstName(student.getFirstName());
+            this.studentToBuild.setLastName(student.getLastName());
+            this.studentToBuild.setPatronymicName(student.getPatronymicName());
+            this.studentToBuild.setAddress(student.getAddress());
+            this.studentToBuild.setBloodGroup(student.getBloodGroup());
+            this.studentToBuild.setPlaceOfBirth(student.getPlaceOfBirth());
+            this.studentToBuild.setDateOfBirth(student.getDateOfBirth());
+            this.studentToBuild.setPassportSeries(student.getPassportSeries());
+            this.studentToBuild.setHeight(student.getHeight());
+            this.studentToBuild.setWeight(student.getWeight());
+
             this.studentToBuild.group = student.group;
             this.studentToBuild.course = student.course;
             this.studentToBuild.studentID = student.studentID;
             this.studentToBuild.credit = student.credit;
-            this.studentToBuild.rankingPosition = student.rankingPosition;
+            this.studentToBuild.phone = student.phone;
             this.studentToBuild.contributions = student.contributions;
             this.studentToBuild.averageScore = student.averageScore;
             this.studentToBuild.chair = student.chair;
@@ -253,7 +281,120 @@ public class Student extends Person {
             return this;
         }
 
+        public Builder setPatronymicName(String patronymicName){
+            studentToBuild.setPatronymicName(patronymicName);
+            return this;
+        }
 
+        public Builder setAddress(String address){
+            studentToBuild.setAddress(address);
+            return this;
+        }
+
+        public Builder setBloodGroup(String bloodGroup){
+            studentToBuild.setBloodGroup(bloodGroup);
+            return this;
+        }
+
+        public Builder setPlaceOfBirth(String placeOfBirth){
+            studentToBuild.setPlaceOfBirth(placeOfBirth);
+            return this;
+        }
+
+        public  Builder setDateOfBirth(LocalDate dateOfBirth){
+            studentToBuild.setDateOfBirth(dateOfBirth);
+            return this;
+        }
+
+        public  Builder setPassportSeries(int passportSeries){
+            studentToBuild.setPassportSeries(passportSeries);
+            return this;
+        }
+
+        public  Builder setHeight(double height){
+            studentToBuild.setHeight(height);
+            return this;
+        }
+
+        public  Builder setWeight(double weight){
+            studentToBuild.setWeight(weight);
+            return this;
+        }
+
+        public  Builder setGroup(int group){
+            studentToBuild.setGroup(group);
+            return this;
+        }
+
+        public  Builder setCourse(int course){
+            studentToBuild.setCourse(course);
+            return this;
+        }
+
+        public  Builder setStudentID(int studentID){
+            studentToBuild.setStudentID(studentID);
+            return this;
+        }
+
+        public  Builder setPhone(int phone){
+            studentToBuild.setPhone(phone);
+            return this;
+        }
+
+        public  Builder setContributions(int contributions){
+            studentToBuild.setContributions(contributions);
+            return this;
+        }
+
+        public  Builder setCredit(int credit){
+            studentToBuild.setCredit(credit);
+            return this;
+        }
+
+        public  Builder setAverageScore(double averageScore){
+            studentToBuild.setAverageScore(averageScore);
+            return this;
+        }
+
+        public  Builder setChair(String chair){
+            studentToBuild.setChair(chair);
+            return this;
+        }
+
+        public  Builder setDepartment(String department){
+            studentToBuild.setDepartment(department);
+            return this;
+        }
+
+        public  Builder setUniversity(String university){
+            studentToBuild.setUniversity(university);
+            return this;
+        }
+
+        public  Builder setExpelled(boolean isExpelled){
+            studentToBuild.setExpelled(isExpelled);
+            return this;
+        }
+
+        public  Builder setFullTimeModeOfStudy(boolean isFullTimeModeOfStudy){
+            studentToBuild.setFullTimeModeOfStudy(isFullTimeModeOfStudy);
+            return this;
+        }
+
+        public  Builder setBursary(boolean isBursary){
+            studentToBuild.setBursary(isBursary);
+            return this;
+        }
+
+        public  Builder setBudget(boolean isBudget){
+            studentToBuild.setBudget(isBudget);
+            return this;
+        }
+
+        public  Builder setEnrollmentDate(LocalDate enrollmentDate){
+            studentToBuild.setEnrollmentDate(enrollmentDate);
+            return this;
+        }
 
         public Builder setFirstName(String firstName){
             studentToBuild.setFirstName(firstName);
@@ -261,8 +402,13 @@ public class Student extends Person {
         }
 
         public Builder setLastName(String lastName){
-            studentToBuild.setFirstName(lastName);
+            studentToBuild.setLastName(lastName);
             return this;
+        }
+
+
+        public Student build(){
+            return studentToBuild;
         }
     }
 
