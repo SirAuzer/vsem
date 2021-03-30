@@ -1,5 +1,7 @@
 package tes.edu.module2.design;
 
+import tes.edu.module2.Interface.IGeometry;
+
 import java.util.Objects;
 
 /**
@@ -10,7 +12,7 @@ import java.util.Objects;
  * @since 21.03.2021 - 16.05
  **/
 
-public class Rectangle {
+public class Rectangle implements IGeometry {
     private int length;
     private int weight;
 
@@ -57,5 +59,20 @@ public class Rectangle {
     @Override
     public int hashCode() {
         return Objects.hash(length, weight);
+    }
+
+    @Override
+    public double getPerimeter() {
+        return (getLength() + getWeight()) * 2;
+    }
+
+    @Override
+    public double getArea() {
+        return getLength() * getWeight();
+    }
+
+    @Override
+    public void showHeight() {
+        System.out.println(getLength());
     }
 }
