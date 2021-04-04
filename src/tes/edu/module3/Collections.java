@@ -17,12 +17,10 @@ import java.util.List;
 
 public class Collections {
     public static void main(String[] args) {
-        //================INSERT=================
+        //------------CREATE-------
         List<Integer> arrayList =  new ArrayList<>();
         List<Integer> linkedList =  new LinkedList<>();
 
-        //------------CREATE-------
-        System.out.println("====================INSERT=================");
         System.out.println("------------------==CREATE==--------\n");
 
         // -ArrayList
@@ -43,7 +41,10 @@ public class Collections {
         System.out.println("LinkedList :\n\tTime for create 100_000 elements = "
                 + ChronoUnit.MILLIS.between(start,finish) + "\n");
 
+        //================INSERT=================
+
         //------------BEGINNING----------
+        System.out.println("====================INSERT=================");
         System.out.println("------------------==BEGINNING==------------\n");
 
         // -ArrayList
@@ -105,7 +106,6 @@ public class Collections {
         finish = LocalDateTime.now();
         System.out.println("LinkedList :\n\tTime for insert 1000 elements from the end = "
                 + ChronoUnit.MILLIS.between(start,finish) + "\n");
-
 
         //===================UPDATE==============
 
@@ -173,7 +173,6 @@ public class Collections {
         System.out.println("LinkedList :\n\tTime for update 1000 elements from the end = "
                 + ChronoUnit.MILLIS.between(start,finish) + "\n");
 
-
         //==============DELETE==============
 
         //------------BEGINNING----------
@@ -197,7 +196,6 @@ public class Collections {
         finish = LocalDateTime.now();
         System.out.println("LinkedList :\n\tTime for delete 1000 elements from the beginning = "
                 + ChronoUnit.MILLIS.between(start,finish) + "\n");
-
 
         //----------MIDDLE------
         System.out.println("-------------------==MIDDLE==-------------\n");
@@ -244,30 +242,30 @@ public class Collections {
 }
 
 
-/*====================INSERT=================
-------------------==CREATE==--------
+/*------------------==CREATE==--------
 
 ArrayList :
-	Time for create 100_000 elements = 45
+	Time for create 100_000 elements = 50
 
 LinkedList :
-	Time for create 100_000 elements = 14
+	Time for create 100_000 elements = 17
 
+====================INSERT=================
 ------------------==BEGINNING==------------
 
 ArrayList :
-	Time for insert 1000 elements from the beginning = 16
+	Time for insert 1000 elements from the beginning = 25
 
 LinkedList :
-	Time for insert 1000 elements from the beginning = 0
+	Time for insert 1000 elements from the beginning = 1
 
 -------------------==MIDDLE==---------------
 
 ArrayList :
-	Time for insert 1000 elements from the middle = 5
+	Time for insert 1000 elements from the middle = 4
 
 LinkedList :
-	Time for insert 1000 elements from the middle = 102
+	Time for insert 1000 elements from the middle = 110
 
 --------------------==END==----------------
 
@@ -292,7 +290,7 @@ ArrayList :
 	Time for update 1000 elements from the middle = 0
 
 LinkedList :
-	Time for update 1000 elements from the middle = 98
+	Time for update 1000 elements from the middle = 94
 
 --------------------==END==-----------------
 
@@ -300,13 +298,13 @@ ArrayList :
 	Time for update 1000 elements from the end = 0
 
 LinkedList :
-	Time for update 1000 elements from the end = 1
+	Time for update 1000 elements from the end = 0
 
 ====================DELETE=================
 -----------------==BEGINNING==-------------
 
 ArrayList :
-	Time for delete 1000 elements from the beginning = 22
+	Time for delete 1000 elements from the beginning = 19
 
 LinkedList :
 	Time for delete 1000 elements from the beginning = 0
@@ -314,19 +312,17 @@ LinkedList :
 -------------------==MIDDLE==-------------
 
 ArrayList :
-	Time for delete 1000 elements from the middle = 3
+	Time for delete 1000 elements from the middle = 4
 
 LinkedList :
-	Time for delete 1000 elements from the middle = 84
+	Time for delete 1000 elements from the middle = 80
 
 --------------------==END==----------------
 
 ArrayList :
-	Time for delete 1000 elements from the end = 0
+	Time for delete 1000 elements from the end = 1
 
 LinkedList :
 	Time for delete 1000 elements from the end = 0
 
-
-Process finished with exit code 0
 */
