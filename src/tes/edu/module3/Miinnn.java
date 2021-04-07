@@ -8,5 +8,5 @@ package tes.edu.module3;
  * @since 07.04.2021 - 22.09
  **/
 
-public class LaboratoryWork2 {
+public class Miinnn {
 }
