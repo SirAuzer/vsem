@@ -1,4 +1,4 @@
-package tes.edu.module3.laboratoryWork2;
+package tes.edu.module3.laboratoryWork2.Interface;
 
 /**
  * @author Hades

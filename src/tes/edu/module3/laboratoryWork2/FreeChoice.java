@@ -1,9 +1,9 @@
 package tes.edu.module3.laboratoryWork2;
 
-import tes.edu.module3.testLaboratory2.TypeFitnessCentreT;
+import tes.edu.module3.laboratoryWork2.Interface.IEfect;
 
 /**
- * @author Hades
+ * @author Arsenii
  * @version 1.0.0
  * @project vsem
  * @class FreeChoice

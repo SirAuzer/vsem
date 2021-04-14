@@ -1,17 +1,14 @@
 package tes.edu.module3.laboratoryWork2;
 
-import tes.edu.module3.testLaboratory2.FreeChoiceT;
-import tes.edu.module3.testLaboratory2.Interface.IAccounting;
-import tes.edu.module3.testLaboratory2.MinSubscribtionT;
-import tes.edu.module3.testLaboratory2.TypeFitnessCentreT;
+import tes.edu.module3.laboratoryWork2.Interface.IEfect;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
- * @author Hades
+ * @author Arsenii
  * @version 1.0.0
  * @project vsem
  * @class Run
@@ -41,28 +38,42 @@ public class Run {
         );
 
         double sumPriceTotal = fitnes.stream().mapToDouble(IEfect::PriceOfMonth).sum();
+        System.out.println("Sum price of month for all program/subscribe : ");
 
         double sumPriceMinSubscribe = fitnes.stream()
                 .filter(price -> price instanceof MinSubscribtion)
                 .mapToDouble(IEfect::PriceOfMonth).sum();
+        System.out.println("Sum price of month for all programs with min-price subscribe : ");
+
 
         double sumPriceFreeChoice = fitnes.stream()
                 .filter(price -> price instanceof FreeChoice)
                 .mapToDouble(IEfect::PriceOfMonth).sum();
+        System.out.println("Sum price of month for all programs with free choice : ");
+
 
         double MaxPrice = fitnes.stream().mapToDouble(IEfect::PriceOfMonth).max().getAsDouble();
+        System.out.println("Max price of month for program : ");
 
 
-       double MaxEffect = fitnes.stream().mapToDouble(IEfect::PlusHP).max().getAsDouble();
+
+        double MaxEffect = fitnes.stream().mapToDouble(IEfect::PlusHP).max().getAsDouble();
+        System.out.println("Max effect from going to the fitness centre : ");
+
         double MinEffect = fitnes.stream().mapToDouble(IEfect::PlusHP).min().getAsDouble();
-
+        System.out.println("Min effect from going to the fitness centre : ");
 
         double avgPrice = fitnes.stream().mapToDouble(IEfect::PriceOfMonth).average().getAsDouble();
-        //but effect
-        /*double MaxEffect = fitnes.stream()
-                .filter(effect -> effect.PlusHP() < avgPrice + )
+        System.out.println("Avg price of month for program : " + avgPrice);
+
+
+        System.out.println("\n\t but.... \n");
+        System.out.println("Subscribe/program with this price have effect : ");
+
+        List<IEfect> effectWithAvgPrice = fitnes.stream()
+                .filter(effect -> effect.PlusHP() < avgPrice + 200 && effect.PlusHP() > avgPrice - 200 )
                 .collect(Collectors.toList());
-*/
+
 
         double avgPriceMinSubscribe = fitnes.stream()
                 .filter(price -> price instanceof MinSubscribtion)
@@ -70,6 +81,14 @@ public class Run {
         double avgPriceFreeChoice = fitnes.stream()
                 .filter(price -> price instanceof FreeChoice)
                 .mapToDouble(IEfect::PriceOfMonth).average().getAsDouble();
+
+        if(avgPriceMinSubscribe > avgPriceFreeChoice){
+            System.out.println("avg price for month min subscribe (" + avgPriceMinSubscribe + ")\n\t more expensive than \n " + avgPriceFreeChoice + ")");
+        }
+        else {
+            System.out.println("avg price for month free choice (" + avgPriceFreeChoice + ")\n\t more expensive than \n MinSubscribe (" + avgPriceMinSubscribe + ")");
+
+        }
 
     }
 }
