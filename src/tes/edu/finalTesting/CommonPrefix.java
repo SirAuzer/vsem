@@ -14,15 +14,16 @@ public class CommonPrefix {
             return array[1];
         }
         String commonPrefix="";
-        int count=0, k=0;
+        int count = 0;
+        int symbol = 0;
         if(array.length>0)
         {
-            for(int i=0; i<array[0].length(); i++)
+            for(int i = 0; i < array[0].length(); i++)
             {
-                int j=1;
-                while(j<array.length)
+                int j = 1;
+                while(j < array.length)
                 {
-                    if(array[0].charAt(k)==array[j].charAt(k))
+                    if(array[0].charAt(symbol) == array[j].charAt(symbol))
                     {
                         count++;
                         j++;
@@ -32,18 +33,18 @@ public class CommonPrefix {
                 }
                 if(count==array.length-1)
                 {
-                    commonPrefix+=array[0].charAt(k);
+                    commonPrefix += array[0].charAt(symbol);
                     count=0;
-                    k++;
+                    symbol++;
                 }
                 else
                 {
-                    return "Common Prefix: " + commonPrefix;
+                    break;
                 }
             }
         }
 
-        return "";
+        return "Common Prefix: " + commonPrefix;
     }
 
     public static void main(String[] args) {
@@ -54,5 +55,7 @@ public class CommonPrefix {
         String[] array2 = {"abc", "abcd", "abce", "abcac"};
 
         System.out.println(prefix(array2)); // abc
+        String[] array3 = {"abc", "abcd", "abce"} ;
+        System.out.println(prefix(array3));
     }
 }
