@@ -32,7 +32,7 @@ public class CommonPrefix {
             }
             if(minWord.length()<=0)return null;
         }
-        return prefix;
+        return "Common Prefix: " + prefix;
     }
 
     public static void main(String[] args) {
