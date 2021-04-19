@@ -17,8 +17,6 @@ public class CommonPrefix {
             return array[1];
         }
 
-        int minLenght = Arrays.stream(array)
-                .mapToInt(String::length).min().orElse(0);
         String minWord = Arrays.stream(array)
                 .min(Comparator.comparing(String::length)).orElse("");
         String prefix = "";
