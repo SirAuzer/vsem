@@ -14,7 +14,6 @@ public class RightShift {
     public static int[] rightShift(int[] array, int step){
         int [] mass = new int[array.length];
         int [] arrayReserv = new int[array.length];
-
         for (int i = 0; i < array.length; i++) {
             arrayReserv[i] = array[i];
         }

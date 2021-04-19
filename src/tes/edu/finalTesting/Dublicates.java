@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class Dublicates {
     public  static  boolean hasDuplicates(int[] array){
         Arrays.sort(array);
-        if(array.length <= 1){return false;}
+        if(array.length <= 1)return false;
 
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] == array[i + 1]) {

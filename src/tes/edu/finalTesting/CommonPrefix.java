@@ -15,7 +15,6 @@ public class CommonPrefix {
         }
         String commonPrefix="";
         int count=0, k=0;
-
         if(array.length>0)
         {
             for(int i=0; i<array[0].length(); i++)

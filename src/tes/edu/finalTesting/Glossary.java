@@ -25,19 +25,6 @@ public class Glossary {
         List<String> list = Arrays.stream(words).collect(Collectors.toList());
         Set<String> distincts = list.stream().collect(Collectors.toSet());
 
-       /* String stringOfDistictinct ="";
-        for (int i = 0; i < words.length; i++)
-        {
-            if (!stringOfDistictinct.contains(words[i]))
-            {
-                if (words[i].startsWith("'"))
-                {
-                    stringOfDistictinct += words[i].substring(1) + " ";
-                }
-                else stringOfDistictinct += words[i] + " ";
-            }
-        }*/
-
 
         Map<String, Integer> map = new HashMap<>();
 
@@ -62,10 +49,10 @@ public class Glossary {
 
 
         String sorted20 = "================================\n" +
-                "\tGLOSSARY" +
+                "\tGLOSSARY\n" +
                 "================================\n" +
-                "--------------------------" +
-                "\tTASK 1" +
+                "--------------------------\n" +
+                "\tTASK 1\n" +
                 "--------------------------\n";
         int counter = 0;
         sorted.entrySet().stream().limit(20).forEach(System.out::println);
